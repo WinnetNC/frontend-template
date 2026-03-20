@@ -2,6 +2,38 @@
 
 A scalable, production-ready frontend template built with modern tools and best practices. Designed for rapid development, maintainability, and clean architecture.
 
+### Project Structure
+
+```
+frontend-template/
+├── .github/
+│   ├── workflows/
+├── cypress/    # e2e Cypress tests
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── config/   # Config-driven data source
+│   ├── utils/
+│   ├── types/
+│   ├── test/   # React Testing Library setup
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── .env.development
+├── .env.staging
+├── .env.production
+├── tailwind.config.ts
+├── cypress.config.ts
+├── eslint.config.js
+├── tsconfig.json
+├── vite.config.ts
+├── package.json
+└── README.md
+```
+
 ### ⚙️ Tech Stack
 
 - React + TypeScript

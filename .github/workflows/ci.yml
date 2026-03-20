@@ -1,0 +1,50 @@
+name: Frontend CI
+
+on:
+  push:
+    branches:
+      - main
+      - development
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+      - development
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      # 🔹 Lint
+      - name: Lint
+        run: npm run lint
+
+      # 🔹 Build (production)
+      - name: Build
+        run: npm run build
+
+      # 🔹 Component Tests (Vitest + RTL)
+      - name: Run unit tests
+        run: npm run test:run
+
+      # 🔹 Cypress E2E Tests
+      - name: Cypress tests
+        uses: cypress-io/github-action@v5
+        with:
+          start: npm run dev
+          # build: npm run build
+          # start: npm run preview
+          wait-on: "http://localhost:5173"
