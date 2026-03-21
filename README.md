@@ -1,3 +1,5 @@
+![CI](https://github.com/WinnetNC/frontend-template/actions/workflows/ci.yml/badge.svg)
+
 ## 🚀 Frontend Template
 
 A scalable, production-ready frontend template built with modern tools and best practices. Designed for rapid development, maintainability, and clean architecture.
@@ -26,9 +28,12 @@ frontend-template/
 ├── .env.development
 ├── .env.staging
 ├── .env.production
+├── index.html
 ├── tailwind.config.ts
 ├── cypress.config.ts
 ├── eslint.config.js
+├── tsconfig.app.json
+├── tsconfig.app.json
 ├── tsconfig.json # Includes path aliases (e.g., @/components)
 ├── vite.config.ts # Includes path aliases and Vitest config
 ├── package.json
@@ -122,4 +127,4 @@ CI (lint, build, test) is included and should pass before deployment.
 - Use aliases like @/components to simplify imports.
 - Environment files .env.development, .env.staging, .env.production control different builds.
 - CI ensures linting, build and all tests pass before merging to development or main.
-  > This project uses a committed `package-lock.json` to ensure consistent installs across environments.
+- This project uses a committed `package-lock.json` to ensure consistent installs across environments.
