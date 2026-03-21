@@ -40,12 +40,22 @@ jobs:
       - name: Run unit tests
         run: npm run test:run
 
+      # 🔹 Skip Cypress if no tests exist
+      - name: Check for Cypress tests
+        id: check_cypress
+        run: |
+          if [ -d "cypress/e2e" ] && [ "$(ls -A cypress/e2e 2>/dev/null)" ]; then
+            echo "has_tests=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_tests=false" >> $GITHUB_OUTPUT
+          fi
+
       # 🔹 Cypress E2E Tests
       - name: Cypress tests
+        if: steps.check_cypress.outputs.has_tests == 'true'
         uses: cypress-io/github-action@v5
         with:
           start: npm run dev
           # build: npm run build
           # start: npm run preview
           wait-on: "http://localhost:5173"
-          command: npx cypress run || echo "No Cypress tests found"
