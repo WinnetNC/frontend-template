@@ -103,9 +103,22 @@ End-to-end tests: run with Cypress
 npm run cypress:run
 ```
 
+### 🚀 Deployment (Optional)
+
+This template does not include active Continuous Deployment (CD) by default.
+
+Recommended approach:
+
+- Use platforms like Vercel or Netlify
+- Configure deployment per project
+- Map branches:
+  - development → staging
+  - main → production
+
+CI (lint, build, test) is included and should pass before deployment.
+
 ### 💡 Notes
 
 - Use aliases like @/components to simplify imports.
 - Environment files .env.development, .env.staging, .env.production control different builds.
 - CI ensures linting, build, and all tests pass before merging to development or main.
-- Future: CD can be added for automatic staging/production deployment.
