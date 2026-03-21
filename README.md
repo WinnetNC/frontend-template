@@ -121,4 +121,4 @@ CI (lint, build, test) is included and should pass before deployment.
 
 - Use aliases like @/components to simplify imports.
 - Environment files .env.development, .env.staging, .env.production control different builds.
-- CI ensures linting, build, and all tests pass before merging to development or main.
+- CI ensures linting, build and all tests pass before merging to development or main.
