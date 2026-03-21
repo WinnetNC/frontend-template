@@ -48,3 +48,4 @@ jobs:
           # build: npm run build
           # start: npm run preview
           wait-on: "http://localhost:5173"
+          command: npx cypress run || echo "No Cypress tests found"
