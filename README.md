@@ -4,7 +4,7 @@
 
 A scalable, production-ready frontend template built with modern tools and best practices. Designed for rapid development, maintainability, and clean architecture.
 
-### Project Structure
+### 📁 Project Structure
 
 ```
 frontend-template/
