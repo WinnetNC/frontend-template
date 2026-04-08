@@ -25,9 +25,7 @@ frontend-template/
 │   ├── main.tsx
 │   ├── App.css
 │   └── index.css
-├── .env.development
-├── .env.staging
-├── .env.production
+├── .env.example
 ├── index.html
 ├── tailwind.config.ts
 ├── cypress.config.ts
